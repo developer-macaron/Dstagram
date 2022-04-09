@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {TestApi} from "../api/TestApi";
 
 const Home = () => {
     const [testString, setTestString] = useState([]);
@@ -13,13 +12,13 @@ const Home = () => {
         })
     }, []);
 
-        return (
-            <div>
-                홈
-                <br/>
-                {testString}
-            </div>
-        );
+    return (
+        <div>
+            홈
+            <br/>
+            {testString}
+        </div>
+    );
 }
 
 Home.propTypes = {};

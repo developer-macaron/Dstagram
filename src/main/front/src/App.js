@@ -1,16 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import {Link, Route, Router, Routes} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import Home from "./pages/Home";
+import {ROUTE} from "./type/menu";
+import React from "react";
 
 function App() {
   return (
       <>
-        <Routes>
-          <Route path="/" element={<MainLayout children={<Home/>}/>}>
-          </Route>
-        </Routes>
+          <Routes>
+              {Object.values(ROUTE).map(({ url, component }, index) => (
+                  <Route exact key={index} path={url} element={<MainLayout children={component}/>} />
+              ))}
+          </Routes>
       </>
   );
 }
