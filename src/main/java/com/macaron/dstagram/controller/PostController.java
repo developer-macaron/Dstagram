@@ -13,4 +13,9 @@ public class PostController {
     public List<String> test() {
         return Arrays.asList("hi");
     }
+
+    @GetMapping("/api/test2")
+    public List<String> test2() {
+        return Arrays.asList("hi");
+    }
 }
