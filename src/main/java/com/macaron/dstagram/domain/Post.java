@@ -1,19 +1,37 @@
 package com.macaron.dstagram.domain;
 
-import lombok.NoArgsConstructor;
+import com.macaron.dstagram.common.Status;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import javax.persistence.*;
-
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
-public class Post {
+public class Post extends BaseTimeEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 500, nullable = false)
-    private String title;
+    private Long accountId;
 
-    @Column(length = 500, nullable = false)
-    private String author;
+    private String status;
+
+    private String content;
+
+    private Long geoInfoId;
+
+    @Builder
+    public Post(Long accountId, String status, String content, Long geoInfoId) {
+        this.accountId = accountId;
+        this.status = status;
+        this.content = content;
+        this.geoInfoId = geoInfoId;
+    }
+
 }

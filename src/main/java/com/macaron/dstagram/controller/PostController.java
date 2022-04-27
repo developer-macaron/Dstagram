@@ -18,4 +18,7 @@ public class PostController {
     public List<String> test2() {
         return Arrays.asList("hi");
     }
+
+
 }
+
