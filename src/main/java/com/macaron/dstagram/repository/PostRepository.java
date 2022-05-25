@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    Optional<Post> findByIdAndStatus(Long id, String status);
+    Optional<Post> findOneByIdAndStatus(Long id, String status);
     List<Post> findByStatusEquals(String status);
 }

@@ -13,6 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 public class Post extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,13 +26,5 @@ public class Post extends BaseTimeEntity{
     private String content;
 
     private Long geoInfoId;
-
-    @Builder
-    public Post(Long accountId, String status, String content, Long geoInfoId) {
-        this.accountId = accountId;
-        this.status = status;
-        this.content = content;
-        this.geoInfoId = geoInfoId;
-    }
 
 }
